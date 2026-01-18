@@ -1,0 +1,849 @@
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: linear-gradient(135deg,
+            #E8D5B7 0%,
+            #D4C4A8 50%,
+            #C0B299 100%);
+    border: 4px solid #654321;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 900px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2.5rem;
+    color: #2C1810;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.customization-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+}
+
+/* Character Preview */
+.character-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.gladiator-display {
+    width: 250px;
+    height: 350px;
+    background: linear-gradient(to bottom,
+            rgba(139, 111, 71, 0.2),
+            rgba(101, 67, 33, 0.3));
+    border: 3px solid #654321;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.gladiator-body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 30px;
+}
+
+.gladiator-head {
+    width: 120px;
+    /* Match character.css */
+    height: 120px;
+    /* Match character.css */
+    background: #F5D7B1;
+    border-radius: 50%;
+    position: relative;
+    /* Removed border */
+    box-shadow:
+        inset 5px 5px 15px rgba(255, 255, 255, 0.6),
+        /* Exact match */
+        inset -5px -5px 15px rgba(0, 0, 0, 0.1),
+        5px 10px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    margin-bottom: -10px;
+    /* Overlap from character.css */
+}
+
+.head-shadow {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.05);
+    /* Exact match */
+    border-radius: 50%;
+    filter: blur(5px);
+}
+
+.face-cross {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    /* Subtle guide lines */
+    pointer-events: none;
+}
+
+.cross-vertical {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    bottom: 10%;
+    width: 2px;
+    background-color: #000;
+    transform: translateX(-50%);
+}
+
+.cross-horizontal {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background-color: #000;
+    transform: translateY(-50%);
+}
+
+.gladiator-face {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 50%;
+}
+
+.gladiator-face::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width: 6px;
+    height: 6px;
+    background: #2C1810;
+    border-radius: 50%;
+    box-shadow: 20px 0 0 #2C1810;
+}
+
+.gladiator-face::after {
+    content: '';
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 15px;
+    background: #2C1810;
+    border-radius: 1px;
+}
+
+/* Hair Styles */
+.gladiator-hair {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2C1810;
+    z-index: 1;
+    /* Removed border */
+    box-shadow:
+        inset 3px 3px 5px rgba(255, 255, 255, 0.2),
+        inset -3px -3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hair-short {
+    width: 95px;
+    height: 40px;
+    border-radius: 50% 50% 0 0;
+}
+
+.hair-mohawk {
+    width: 30px;
+    height: 50px;
+    border-radius: 15px 15px 0 0;
+    left: 50%;
+}
+
+.hair-long {
+    width: 130px;
+    /* Wider to cover more of head */
+    height: 80px;
+    /* Taller for more flowing look */
+    border-radius: 50% 50% 45% 45%;
+    /* More natural flowing bottom */
+    top: -10px;
+    /* Position higher on head */
+    box-shadow:
+        inset 3px 3px 8px rgba(255, 255, 255, 0.15),
+        inset -3px -3px 8px rgba(0, 0, 0, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Add depth */
+}
+
+/* Add flowing strands effect for long hair */
+.hair-long::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 15%;
+    width: 70%;
+    height: 20px;
+    background: inherit;
+    border-radius: 0 0 50% 50%;
+    opacity: 0.7;
+}
+
+.hair-long::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 90%;
+    height: 60%;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 40%,
+            rgba(0, 0, 0, 0.2) 100%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hair-bald {
+    display: none;
+}
+
+/* Armor Styles - Simple Rectangle Body */
+/* Armor Styles - Simple Rectangle Body */
+.gladiator-armor {
+    width: 70px;
+    height: 90px;
+    margin-top: 8px;
+    position: relative;
+    border-radius: 15px;
+    /* Softer corners */
+    /* Removed border */
+    box-shadow:
+        inset 5px 5px 10px rgba(255, 255, 255, 0.4),
+        inset -5px -5px 10px rgba(0, 0, 0, 0.2),
+        0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.armor-light {
+    background: linear-gradient(to right, #999, #BBB);
+}
+
+.armor-medium {
+    background: linear-gradient(to right, #708090, #A9A9A9);
+}
+
+.armor-heavy {
+    background: linear-gradient(to right, #4A4A4A, #696969);
+}
+
+.armor-champion {
+    background: linear-gradient(to right, #DAA520, #FFD700);
+    box-shadow:
+        inset -10px 0 15px rgba(0, 0, 0, 0.2),
+        0 4px 12px rgba(218, 165, 32, 0.5);
+}
+
+/* Hands - Floating circles */
+/* Hands - Floating circles with fingers */
+.gladiator-hand {
+    position: absolute;
+    width: 50px;
+    /* Match character.css exactly */
+    height: 50px;
+    /* Match character.css exactly */
+    border-radius: 50%;
+    top: 25%;
+    /* Removed border */
+    box-shadow:
+        inset 5px 5px 15px rgba(255, 255, 255, 0.6),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.1),
+        5px 10px 15px rgba(0, 0, 0, 0.1);
+    z-index: 8;
+    /* Match character.css */
+    background: #ffdb4d;
+    /* Match character.css */
+}
+
+.fingers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.finger {
+    position: absolute;
+    background-color: inherit;
+    border-radius: 10px;
+    box-shadow:
+        inset 5px 5px 15px rgba(255, 255, 255, 0.6),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.1),
+        5px 10px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    /* In front of weapons */
+}
+
+.finger-1,
+.finger-2,
+.finger-3 {
+    /* Folded fingers - exact match */
+    width: 40px;
+    height: 15px;
+    left: 5px;
+}
+
+.finger-1 {
+    top: 10px;
+}
+
+.finger-2 {
+    top: 25px;
+}
+
+.finger-3 {
+    top: 40px;
+}
+
+.thumb {
+    /* Thumb pointing up - exact match */
+    width: 15px;
+    height: 40px;
+    top: -20px;
+    background-color: inherit;
+    border-radius: 10px;
+    box-shadow:
+        inset 5px 5px 15px rgba(255, 255, 255, 0.6),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.1),
+        5px 10px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    /* In front of weapons */
+}
+
+.hand-left .thumb {
+    left: auto;
+    right: 10px;
+    transform: rotate(10deg);
+}
+
+.hand-right .thumb {
+    left: 10px;
+    transform: rotate(-10deg);
+}
+
+
+.hand-left {
+    left: -40px;
+    /* Position outside armor body */
+    top: 20px;
+    /* Adjust vertical position */
+}
+
+.hand-right {
+    right: -40px;
+    /* Position outside armor body */
+    top: 20px;
+    /* Adjust vertical position */
+}
+
+@keyframes floatHand {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Legs and Feet */
+.gladiator-legs {
+    width: 100%;
+    height: 35px;
+    margin-top: 8px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gladiator-foot {
+    width: 35px;
+    height: 25px;
+    position: relative;
+    --skin-color: #F5D7B1;
+}
+
+.gladiator-foot {
+    width: 50px;
+    /* Match character.css */
+    height: 30px;
+    /* Match character.css */
+    position: relative;
+    --skin-color: #F5D7B1;
+    border-radius: 20px;
+    /* Match character.css */
+    /* Remove original before/after for foot */
+    box-shadow:
+        inset 5px 5px 15px rgba(255, 255, 255, 0.6),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.1),
+        5px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gladiator-foot::before {
+    display: none;
+}
+
+.gladiator-foot::after {
+    display: none;
+}
+
+/* Remove old shoe style to match character.css bare foot look */
+
+.foot-shadow {
+    position: absolute;
+    bottom: -5px;
+    left: 5%;
+    width: 90%;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    filter: blur(2px);
+    z-index: -1;
+}
+
+.foot-left::after {
+    transform: rotate(-5deg);
+}
+
+.foot-right::after {
+    transform: rotate(5deg);
+}
+
+/* Weapon Styles */
+.gladiator-weapon {
+    position: absolute;
+    bottom: 5px;
+    /* Position in palm area */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+    /* In front of hand (8), behind fingers (10) */
+}
+
+.weapon-sword {
+    width: 8px;
+    height: 80px;
+    background: linear-gradient(to right,
+            #888888 0%,
+            #C0C0C0 15%,
+            #F0F0F0 30%,
+            #FFFFFF 50%,
+            #F0F0F0 70%,
+            #C0C0C0 85%,
+            #888888 100%);
+    border-radius: 4px 4px 0 0;
+    box-shadow:
+        3px 0 8px rgba(0, 0, 0, 0.6),
+        inset 2px 0 3px rgba(255, 255, 255, 0.9),
+        inset -2px 0 3px rgba(0, 0, 0, 0.4),
+        0 0 10px rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+/* Blade tip point */
+.weapon-sword::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 8px solid #C0C0C0;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+}
+
+/* Sword crossguard */
+.weapon-sword::after {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 6px;
+    background: linear-gradient(to bottom,
+            #DAA520 0%,
+            #FFD700 30%,
+            #B8860B 70%,
+            #8B6914 100%);
+    border-radius: 3px;
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.5),
+        inset 0 1px 2px rgba(255, 255, 255, 0.4),
+        0 0 8px rgba(218, 165, 32, 0.3);
+}
+
+/* Grip (handle) - using a pseudo-element on the parent */
+.gladiator-weapon .weapon-sword {
+    background: linear-gradient(to right,
+            #888888 0%,
+            #C0C0C0 15%,
+            #F0F0F0 30%,
+            #FFFFFF 50%,
+            #F0F0F0 70%,
+            #C0C0C0 85%,
+            #888888 100%);
+}
+
+/* Add grip texture below crossguard */
+.weapon-sword {
+    background-image:
+        linear-gradient(to bottom,
+            transparent 0%,
+            transparent 81%,
+            #654321 81%,
+            #8B4513 83%,
+            #654321 85%,
+            #8B4513 87%,
+            #654321 89%,
+            #8B4513 91%,
+            #654321 93%,
+            #8B4513 95%,
+            #654321 97%,
+            #8B4513 99%,
+            #654321 100%),
+        linear-gradient(to right,
+            #888888 0%,
+            #C0C0C0 15%,
+            #F0F0F0 30%,
+            #FFFFFF 50%,
+            #F0F0F0 70%,
+            #C0C0C0 85%,
+            #888888 100%);
+}
+
+.weapon-spear {
+    width: 7px;
+    height: 85px;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            transparent 12%,
+            #6B4423 12%,
+            #8B4513 15%,
+            #A0522D 50%,
+            #8B4513 85%,
+            #6B4423 100%);
+    border-radius: 2px;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Spear tip */
+.weapon-spear::before {
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #C0C0C0;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
+}
+
+/* Spear tip shine */
+.weapon-spear::after {
+    content: '';
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 16px solid #E8E8E8;
+}
+
+.weapon-axe {
+    width: 7px;
+    height: 75px;
+    background: linear-gradient(to right,
+            #6B4423 0%,
+            #8B4513 30%,
+            #A0522D 50%,
+            #8B4513 70%,
+            #6B4423 100%);
+    border-radius: 3px;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Axe blade */
+.weapon-axe::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: -12px;
+    width: 30px;
+    height: 24px;
+    background: linear-gradient(135deg,
+            #556B2F 0%,
+            #708090 20%,
+            #A9A9A9 40%,
+            #C0C0C0 50%,
+            #A9A9A9 60%,
+            #708090 80%,
+            #556B2F 100%);
+    border-radius: 0 10px 10px 0;
+    box-shadow:
+        2px 2px 6px rgba(0, 0, 0, 0.5),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+/* Axe blade edge */
+.weapon-axe::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    width: 2px;
+    height: 20px;
+    background: linear-gradient(to bottom, transparent, #E8E8E8, transparent);
+}
+
+.weapon-trident {
+    width: 7px;
+    height: 110px;
+    /* Made longer */
+    background: linear-gradient(to right,
+            #6B4423 0%,
+            #8B4513 30%,
+            #A0522D 50%,
+            #8B4513 70%,
+            #6B4423 100%);
+    border-radius: 2px;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Trident prongs */
+.weapon-trident::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 22px;
+    background: linear-gradient(to bottom, #C0C0C0, #A9A9A9);
+    border-radius: 2px 2px 0 0;
+    box-shadow:
+        -8px 0 0 0 #C0C0C0,
+        8px 0 0 0 #C0C0C0,
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        -8px 2px 4px rgba(0, 0, 0, 0.4),
+        8px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Trident tips shine */
+.weapon-trident::after {
+    content: '';
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 10px;
+    background: linear-gradient(to bottom, #FFFFFF, transparent);
+    box-shadow: -8px 0 0 0 rgba(255, 255, 255, 0.8), 8px 0 0 0 rgba(255, 255, 255, 0.8);
+}
+
+.preview-label {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.2rem;
+    color: #654321;
+    font-weight: 700;
+}
+
+/* Customization Options */
+.customization-options {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.option-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-label {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.1rem;
+    color: #2C1810;
+    font-weight: 700;
+}
+
+.option-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.option-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2C1810;
+    background: linear-gradient(135deg, #C19A6B, #D4A574);
+    border: 2px solid #8B6F47;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 45px;
+    min-height: 45px;
+}
+
+.option-btn:hover {
+    background: linear-gradient(135deg, #D4A574, #E8D5B7);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.option-btn.active {
+    background: linear-gradient(135deg, #8B4513, #A0522D);
+    color: #FFFFFF;
+    border-color: #654321;
+    box-shadow: 0 0 12px rgba(139, 69, 19, 0.5);
+}
+
+.name-input {
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-family: 'Cinzel Decorative', serif;
+    color: #2C1810;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #8B6F47;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.name-input:focus {
+    border-color: #654321;
+    box-shadow: 0 0 12px rgba(101, 67, 33, 0.3);
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.create-btn {
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    font-weight: 900;
+    font-family: 'Cinzel Decorative', serif;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #8B4513, #A0522D, #8B4513);
+    border: 3px solid #654321;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    letter-spacing: 2px;
+}
+
+.create-btn:hover {
+    background: linear-gradient(135deg, #A0522D, #CD853F, #A0522D);
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(218, 165, 32, 0.4);
+}
+
+.create-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .customization-container {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-title {
+        font-size: 2rem;
+    }
+}

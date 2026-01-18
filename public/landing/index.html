@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colosseum Arena</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="atmosphere.css">
+</head>
+
+<body>
+    <div class="scene-container">
+        <!-- Plaito Logo -->
+        <div class="plaito-logo">PLAITO</div>
+
+        <!-- Connect Wallet Button -->
+        <button class="connect-wallet-btn">
+            <svg class="wallet-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M21 18V19C21 20.1 20.1 21 19 21H5C3.89 21 3 20.1 3 19V5C3 3.9 3.89 3 5 3H19C20.1 3 21 3.9 21 5V6H12C10.89 6 10 6.9 10 8V16C10 17.1 10.89 18 12 18H21ZM12 16H22V8H12V16ZM16 13.5C15.17 13.5 14.5 12.83 14.5 12C14.5 11.17 15.17 10.5 16 10.5C16.83 10.5 17.5 11.17 17.5 12C17.5 12.83 16.83 13.5 16 13.5Z"
+                    fill="currentColor" />
+            </svg>
+            <span>Connect Wallet</span>
+        </button>
+
+        <!-- Sky and clouds -->
+        <div class="sky">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+            <div class="cloud cloud-4"></div>
+            <div class="cloud cloud-5"></div>
+            <div class="cloud cloud-6"></div>
+        </div>
+
+        <!-- Atmospheric effects -->
+        <div class="light-rays"></div>
+        <div class="dust-particles">
+            <div class="dust dust-1"></div>
+            <div class="dust dust-2"></div>
+            <div class="dust dust-3"></div>
+            <div class="dust dust-4"></div>
+            <div class="dust dust-5"></div>
+            <div class="dust dust-6"></div>
+            <div class="dust dust-7"></div>
+            <div class="dust dust-8"></div>
+        </div>
+        <div class="atmospheric-fog"></div>
+
+        <!-- Spectator seating tiers -->
+        <div class="seating-tier tier-1"></div>
+        <div class="seating-tier tier-2"></div>
+        <div class="seating-tier tier-3"></div>
+
+        <!-- Colosseum background -->
+        <div class="colosseum-bg">
+            <div class="colosseum-left">
+                <div class="arch arch-1"></div>
+                <div class="arch arch-2"></div>
+                <div class="arch arch-3"></div>
+                <div class="arch arch-4"></div>
+                <div class="arch arch-5"></div>
+                <div class="stone-detail stone-1"></div>
+                <div class="stone-detail stone-2"></div>
+                <div class="stone-detail stone-5"></div>
+                <div class="stone-detail stone-6"></div>
+                <div class="stone-detail stone-13"></div>
+                <div class="stone-detail stone-14"></div>
+            </div>
+            <div class="colosseum-right">
+                <div class="arch arch-1"></div>
+                <div class="arch arch-2"></div>
+                <div class="arch arch-3"></div>
+                <div class="arch arch-4"></div>
+                <div class="arch arch-5"></div>
+                <div class="stone-detail stone-3"></div>
+                <div class="stone-detail stone-4"></div>
+                <div class="stone-detail stone-7"></div>
+                <div class="stone-detail stone-8"></div>
+                <div class="stone-detail stone-15"></div>
+                <div class="stone-detail stone-16"></div>
+            </div>
+            <div class="colosseum-back">
+                <div class="back-arch back-arch-1"></div>
+                <div class="back-arch back-arch-2"></div>
+                <div class="back-arch back-arch-3"></div>
+                <div class="back-arch back-arch-4"></div>
+                <div class="back-arch back-arch-5"></div>
+                <div class="back-arch back-arch-6"></div>
+                <div class="back-arch back-arch-7"></div>
+                <div class="center-entrance"></div>
+                <div class="stone-detail stone-9"></div>
+                <div class="stone-detail stone-10"></div>
+            </div>
+        </div>
+
+        <!-- Banners and flags -->
+        <div class="banner banner-left">
+            <div class="banner-pole"></div>
+            <div class="banner-flag"></div>
+        </div>
+        <div class="banner banner-right">
+            <div class="banner-pole"></div>
+            <div class="banner-flag"></div>
+        </div>
+        <div class="banner banner-left-far">
+            <div class="banner-pole"></div>
+            <div class="banner-flag banner-flag-gold"></div>
+        </div>
+        <div class="banner banner-right-far">
+            <div class="banner-pole"></div>
+            <div class="banner-flag banner-flag-gold"></div>
+        </div>
+
+        <!-- Torches -->
+        <div class="torch torch-left-1">
+            <div class="torch-stand"></div>
+            <div class="torch-flame"></div>
+        </div>
+        <div class="torch torch-left-2">
+            <div class="torch-stand"></div>
+            <div class="torch-flame"></div>
+        </div>
+        <div class="torch torch-left-3">
+            <div class="torch-stand"></div>
+            <div class="torch-flame"></div>
+        </div>
+        <div class="torch torch-left-4">
+            <div class="torch-stand"></div>
+            <div class="torch-flame"></div>
+        </div>
+        <div class="torch torch-right-1">
+            <div class="torch-stand"></div>
+            <div class="torch-flame"></div>
+        </div>
+        <div class="torch torch-right-2">
+            <div class="torch-stand"></div>
+            <div class="torch-flame"></div>
+        </div>
+        <div class="torch torch-right-3">
+            <div class="torch-stand"></div>
+            <div class="torch-flame"></div>
+        </div>
+        <div class="torch torch-right-4">
+            <div class="torch-stand"></div>
+            <div class="torch-flame"></div>
+        </div>
+
+        <!-- Arena floor (the main interactive area) -->
+        <div class="arena-floor">
+            <div class="floor-pattern"></div>
+            <div class="center-circle"></div>
+            <div class="floor-crack floor-crack-1"></div>
+            <div class="floor-crack floor-crack-2"></div>
+            <div class="floor-crack floor-crack-3"></div>
+        </div>
+
+        <!-- Decorative elements -->
+        <div class="pillar pillar-left">
+            <div class="pillar-capital"></div>
+            <div class="pillar-base"></div>
+            <div class="pillar-ring pillar-ring-1"></div>
+            <div class="pillar-ring pillar-ring-2"></div>
+            <div class="pillar-ring pillar-ring-3"></div>
+            <div class="pillar-crack pillar-crack-main"></div>
+            <div class="pillar-crack pillar-crack-secondary"></div>
+            <div class="pillar-crack pillar-crack-small"></div>
+            <div class="pillar-vines pillar-vines-main"></div>
+            <div class="pillar-vines pillar-vines-secondary"></div>
+            <div class="pillar-moss pillar-moss-1"></div>
+            <div class="pillar-moss pillar-moss-2"></div>
+            <div class="pillar-weathering"></div>
+        </div>
+        <div class="pillar pillar-right">
+            <div class="pillar-capital"></div>
+            <div class="pillar-base"></div>
+            <div class="pillar-ring pillar-ring-1"></div>
+            <div class="pillar-ring pillar-ring-2"></div>
+            <div class="pillar-ring pillar-ring-3"></div>
+            <div class="pillar-crack pillar-crack-main"></div>
+            <div class="pillar-crack pillar-crack-secondary"></div>
+            <div class="pillar-crack pillar-crack-small"></div>
+            <div class="pillar-vines pillar-vines-main"></div>
+            <div class="pillar-vines pillar-vines-secondary"></div>
+            <div class="pillar-moss pillar-moss-1"></div>
+            <div class="pillar-moss pillar-moss-2"></div>
+            <div class="pillar-weathering"></div>
+        </div>
+        <div class="pillar pillar-left-back">
+            <div class="pillar-capital"></div>
+            <div class="pillar-base"></div>
+            <div class="pillar-ring pillar-ring-1"></div>
+            <div class="pillar-ring pillar-ring-2"></div>
+            <div class="pillar-crack pillar-crack-main"></div>
+            <div class="pillar-crack pillar-crack-secondary"></div>
+            <div class="pillar-vines pillar-vines-main"></div>
+            <div class="pillar-moss pillar-moss-1"></div>
+            <div class="pillar-weathering"></div>
+        </div>
+        <div class="pillar pillar-right-back">
+            <div class="pillar-capital"></div>
+            <div class="pillar-base"></div>
+            <div class="pillar-ring pillar-ring-1"></div>
+            <div class="pillar-ring pillar-ring-2"></div>
+            <div class="pillar-crack pillar-crack-main"></div>
+            <div class="pillar-crack pillar-crack-secondary"></div>
+            <div class="pillar-vines pillar-vines-main"></div>
+            <div class="pillar-moss pillar-moss-1"></div>
+            <div class="pillar-weathering"></div>
+        </div>
+
+        <!-- Weathered stones on floor -->
+        <div class="floor-stone floor-stone-1"></div>
+        <div class="floor-stone floor-stone-2"></div>
+        <div class="floor-stone floor-stone-3"></div>
+        <div class="floor-stone floor-stone-4"></div>
+        <div class="floor-stone floor-stone-5"></div>
+        <div class="floor-stone floor-stone-6"></div>
+        <div class="floor-stone floor-stone-7"></div>
+        <div class="floor-stone floor-stone-8"></div>
+        <div class="floor-stone floor-stone-9"></div>
+        <div class="floor-stone floor-stone-10"></div>
+        <div class="floor-stone floor-stone-11"></div>
+        <div class="floor-stone floor-stone-12"></div>
+
+        <!-- Player Character in Arena -->
+        <div id="playerCharacter" class="player-character hidden">
+            <div class="player-body">
+                <div class="player-head">
+                    <div class="head-shadow"></div>
+                    <div class="player-hair"></div>
+                    <div class="face-cross">
+                        <div class="cross-vertical"></div>
+                        <div class="cross-horizontal"></div>
+                    </div>
+                </div>
+                <div class="player-armor">
+                    <div class="body-shadow"></div>
+                    <div class="player-hand hand-left">
+                        <div class="fingers">
+                            <div class="hand-shadow"></div>
+                            <div class="finger finger-1"></div>
+                            <div class="finger finger-2"></div>
+                            <div class="finger finger-3"></div>
+                            <div class="finger thumb"></div>
+                        </div>
+                    </div>
+                    <div class="player-hand hand-right">
+                        <div class="player-weapon"></div>
+                        <div class="fingers">
+                            <div class="hand-shadow"></div>
+                            <div class="finger finger-1"></div>
+                            <div class="finger finger-2"></div>
+                            <div class="finger finger-3"></div>
+                            <div class="finger thumb"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-legs">
+                    <div class="player-foot foot-left">
+                        <div class="foot-shadow"></div>
+                    </div>
+                    <div class="player-foot foot-right">
+                        <div class="foot-shadow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive area placeholder -->
+        <div class="game-area">
+            <button class="battle-button">
+                <div class="button-damage button-crack-1"></div>
+                <div class="button-damage button-crack-2"></div>
+                <div class="button-damage button-crack-3"></div>
+                <div class="button-scratch button-scratch-1"></div>
+                <div class="button-scratch button-scratch-2"></div>
+                <div class="button-scratch button-scratch-3"></div>
+                <div class="button-dent button-dent-1"></div>
+                <div class="button-dent button-dent-2"></div>
+                <span class="button-text">BATTLE</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Character Customization Modal -->
+    <div id="characterModal" class="modal">
+        <div class="modal-content">
+            <h2 class="modal-title">Create Your Gladiator</h2>
+
+            <div class="customization-container">
+                <!-- Character Preview -->
+                <div class="character-preview">
+                    <div class="gladiator-display">
+                        <div id="gladiatorBody" class="gladiator-body">
+                            <div id="gladiatorHead" class="gladiator-head">
+                                <div class="head-shadow"></div>
+                                <div id="gladiatorHair" class="gladiator-hair"></div>
+                                <div class="face-cross">
+                                    <div class="cross-vertical"></div>
+                                    <div class="cross-horizontal"></div>
+                                </div>
+                            </div>
+                            <div id="gladiatorArmor" class="gladiator-armor">
+                                <div class="body-shadow"></div>
+                                <!-- Floating hands -->
+                                <div class="gladiator-hand hand-left">
+                                    <div class="fingers">
+                                        <div class="hand-shadow"></div>
+                                        <div class="finger finger-1"></div>
+                                        <div class="finger finger-2"></div>
+                                        <div class="finger finger-3"></div>
+                                        <div class="finger thumb"></div>
+                                    </div>
+                                </div>
+                                <div class="gladiator-hand hand-right">
+                                    <div id="gladiatorWeapon" class="gladiator-weapon"></div>
+                                    <div class="fingers">
+                                        <div class="hand-shadow"></div>
+                                        <div class="finger finger-1"></div>
+                                        <div class="finger finger-2"></div>
+                                        <div class="finger finger-3"></div>
+                                        <div class="finger thumb"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gladiator-legs">
+                                <div class="gladiator-foot foot-left">
+                                    <div class="foot-shadow"></div>
+                                </div>
+                                <div class="gladiator-foot foot-right">
+                                    <div class="foot-shadow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="preview-label">Your Gladiator</p>
+                </div>
+
+                <!-- Customization Options -->
+                <div class="customization-options">
+                    <!-- Skin Tone -->
+                    <div class="option-group">
+                        <label class="option-label">Skin Tone</label>
+                        <div class="option-buttons">
+                            <button class="option-btn skin-btn active" data-skin="light"
+                                style="background: #F5D7B1;"></button>
+                            <button class="option-btn skin-btn" data-skin="medium"
+                                style="background: #D4A574;"></button>
+                            <button class="option-btn skin-btn" data-skin="tan" style="background: #C19A6B;"></button>
+                            <button class="option-btn skin-btn" data-skin="dark" style="background: #8B6F47;"></button>
+                        </div>
+                    </div>
+
+                    <!-- Hair Style -->
+                    <div class="option-group">
+                        <label class="option-label">Hair Style</label>
+                        <div class="option-buttons">
+                            <button class="option-btn hair-style-btn active" data-hair="short">Short</button>
+                            <button class="option-btn hair-style-btn" data-hair="mohawk">Mohawk</button>
+                            <button class="option-btn hair-style-btn" data-hair="long">Long</button>
+                            <button class="option-btn hair-style-btn" data-hair="bald">Bald</button>
+                        </div>
+                    </div>
+
+                    <!-- Hair Color -->
+                    <div class="option-group">
+                        <label class="option-label">Hair Color</label>
+                        <div class="option-buttons">
+                            <button class="option-btn hair-color-btn active" data-color="black"
+                                style="background: #2C1810;"></button>
+                            <button class="option-btn hair-color-btn" data-color="brown"
+                                style="background: #654321;"></button>
+                            <button class="option-btn hair-color-btn" data-color="blonde"
+                                style="background: #DAA520;"></button>
+                            <button class="option-btn hair-color-btn" data-color="red"
+                                style="background: #8B4513;"></button>
+                        </div>
+                    </div>
+
+                    <!-- Armor Type -->
+                    <div class="option-group">
+                        <label class="option-label">Armor</label>
+                        <div class="option-buttons">
+                            <button class="option-btn armor-btn active" data-armor="light">Light</button>
+                            <button class="option-btn armor-btn" data-armor="medium">Medium</button>
+                            <button class="option-btn armor-btn" data-armor="heavy">Heavy</button>
+                            <button class="option-btn armor-btn" data-armor="champion">Champion</button>
+                        </div>
+                    </div>
+
+                    <!-- Weapon -->
+                    <div class="option-group">
+                        <label class="option-label">Weapon</label>
+                        <div class="option-buttons">
+                            <button class="option-btn weapon-btn active" data-weapon="sword">Sword</button>
+                            <button class="option-btn weapon-btn" data-weapon="spear">Spear</button>
+                            <button class="option-btn weapon-btn" data-weapon="axe">Axe</button>
+                            <button class="option-btn weapon-btn" data-weapon="trident">Trident</button>
+                        </div>
+                    </div>
+
+                    <!-- Character Name -->
+                    <div class="option-group">
+                        <label class="option-label">Gladiator Name</label>
+                        <input type="text" id="gladiatorName" class="name-input" placeholder="Enter your name..."
+                            maxlength="20">
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="modal-actions">
+                        <button id="createCharacterBtn" class="create-btn">Enter the Arena</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
