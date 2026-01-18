@@ -136,7 +136,7 @@ export class PearApiClient {
     }) {
         const payload = {
             executionType: params.executionType,
-            slippage: 0.1, // Increased to 10% to prevent execution reverts
+            slippage: 0.05, // 5% slippage to satisfy validation (0.001 - 0.1)
             leverage: params.leverage,
             usdValue: params.usdValue,
             longAssets: params.longAssets,
@@ -182,7 +182,10 @@ export class PearApiClient {
     async closePosition(positionId: string) {
         console.log("🔒 Closing position:", positionId);
         try {
-            const response = await this.client.delete(`/positions/${positionId}`);
+            // Using POST /positions/{id}/close as per Pear Protocol API
+            const response = await this.client.post(`/positions/${positionId}/close`, {
+                executionType: 'MARKET'
+            });
             console.log("✅ Position closed successfully:", response.data);
             return response.data;
         } catch (error: any) {
